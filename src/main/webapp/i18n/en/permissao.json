@@ -1,0 +1,23 @@
+{
+    "aawAtividade3App": {
+        "permissao" : {
+            "home": {
+                "title": "Permissaos",
+                "createLabel": "Create a new Permissao",
+                "createOrEditLabel": "Create or edit a Permissao"
+            },
+            "created": "A new Permissao is created with identifier {{ param }}",
+            "updated": "A Permissao is updated with identifier {{ param }}",
+            "deleted": "A Permissao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Permissao {{ id }}?"
+            },
+            "detail": {
+                "title": "Permissao"
+            },
+            "codigo": "Codigo",
+            "tipo": "Tipo",
+            "usuario": "Usuario"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "aawAtividade3App": {
+        "periodoLetivo" : {
+            "home": {
+                "title": "Periodo Letivos",
+                "createLabel": "Create a new Periodo Letivo",
+                "createOrEditLabel": "Create or edit a Periodo Letivo"
+            },
+            "created": "A new Periodo Letivo is created with identifier {{ param }}",
+            "updated": "A Periodo Letivo is updated with identifier {{ param }}",
+            "deleted": "A Periodo Letivo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Periodo Letivo {{ id }}?"
+            },
+            "detail": {
+                "title": "Periodo Letivo"
+            },
+            "codigo": "Codigo",
+            "mes": "Mes",
+            "ano": "Ano",
+            "falta": "Falta",
+            "aula": "Aula"
+        }
+    }
+}

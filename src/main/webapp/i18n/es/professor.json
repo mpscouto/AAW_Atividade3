@@ -1,0 +1,26 @@
+{
+    "aawAtividade3App": {
+        "professor" : {
+            "home": {
+                "title": "Professors",
+                "createLabel": "Crear nuevo Professor",
+                "createOrEditLabel": "Crear o editar Professor"
+            },
+            "created": "Un nuevo Professor ha sido creado con el identificador {{ param }}",
+            "updated": "Un Professor ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Professor ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Professor {{ id }}?"
+            },
+            "detail": {
+                "title": "Professor"
+            },
+            "codigo": "Codigo",
+            "grau": "Grau",
+            "salario": "Salario",
+            "turma": "Turma",
+            "atividade": "Atividade",
+            "disciplina": "Disciplina"
+        }
+    }
+}

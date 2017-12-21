@@ -1,0 +1,36 @@
+
+<div *ngIf="disciplina">
+    <h2><span jhiTranslate="aawAtividade3App.disciplina.detail.title">Disciplina</span> {{disciplina.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="aawAtividade3App.disciplina.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{disciplina.codigo}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.disciplina.nome">Nome</span></dt>
+        <dd>
+            <span>{{disciplina.nome}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.disciplina.professor">Professor</span></dt>
+        <dd>
+            <span *ngFor="let professor of disciplina.professors; let last = last">
+                <a [routerLink]="['/professor', professor?.id ]">{{professor.codigo}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

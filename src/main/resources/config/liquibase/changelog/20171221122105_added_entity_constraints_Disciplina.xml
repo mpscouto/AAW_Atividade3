@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Disciplina.
+    -->
+    <changeSet id="20171221122105-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="disciplinas_id"
+                                 baseTableName="disciplina_professor"
+                                 constraintName="fk_disciplina_professor_disciplinas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="disciplina"/>
+        <addForeignKeyConstraint baseColumnNames="professors_id"
+                                 baseTableName="disciplina_professor"
+                                 constraintName="fk_disciplina_professor_professors_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="professor"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDisciplinaLabel" jhiTranslate="aawAtividade3App.disciplina.home.createOrEditLabel">Create or edit a Disciplina</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!disciplina.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="disciplina.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.disciplina.codigo" for="field_codigo">Codigo</label>
+            <input type="number" class="form-control" name="codigo" id="field_codigo"
+                [(ngModel)]="disciplina.codigo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.disciplina.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                [(ngModel)]="disciplina.nome" />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="aawAtividade3App.disciplina.professor" for="field_professor">Professor</label>
+            <select class="form-control" id="field_professor" multiple name="professor" [(ngModel)]="disciplina.professors">
+                <option [ngValue]="getSelected(disciplina.professors, professorOption)" *ngFor="let professorOption of professors; trackBy: trackProfessorById">{{professorOption.codigo}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

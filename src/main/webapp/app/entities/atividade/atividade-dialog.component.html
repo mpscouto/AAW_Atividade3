@@ -1,0 +1,49 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAtividadeLabel" jhiTranslate="aawAtividade3App.atividade.home.createOrEditLabel">Create or edit a Atividade</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!atividade.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="atividade.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.atividade.codigo" for="field_codigo">Codigo</label>
+            <input type="number" class="form-control" name="codigo" id="field_codigo"
+                [(ngModel)]="atividade.codigo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.atividade.roteiro" for="field_roteiro">Roteiro</label>
+            <input type="text" class="form-control" name="roteiro" id="field_roteiro"
+                [(ngModel)]="atividade.roteiro" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.atividade.professor" for="field_professor">Professor</label>
+            <select class="form-control" id="field_professor" name="professor" [(ngModel)]="atividade.professor" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="professorOption.id === atividade.professor?.id ? atividade.professor : professorOption" *ngFor="let professorOption of professors; trackBy: trackProfessorById">{{professorOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.atividade.disciplina" for="field_disciplina">Disciplina</label>
+            <select class="form-control" id="field_disciplina" name="disciplina" [(ngModel)]="atividade.disciplina" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="disciplinaOption.id === atividade.disciplina?.id ? atividade.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+{
+    "aawAtividade3App": {
+        "falta" : {
+            "home": {
+                "title": "Faltas",
+                "createLabel": "Crear nuevo Falta",
+                "createOrEditLabel": "Crear o editar Falta"
+            },
+            "created": "Un nuevo Falta ha sido creado con el identificador {{ param }}",
+            "updated": "Un Falta ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Falta ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Falta {{ id }}?"
+            },
+            "detail": {
+                "title": "Falta"
+            },
+            "codigo": "Codigo",
+            "numFaltas": "Num Faltas",
+            "aluno": "Aluno",
+            "aula": "Aula",
+            "periodoLetivo": "Periodo Letivo"
+        }
+    }
+}

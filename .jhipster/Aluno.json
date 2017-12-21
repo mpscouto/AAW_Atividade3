@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "falta",
+            "otherEntityName": "falta",
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "nota",
+            "otherEntityName": "nota",
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "entrega",
+            "otherEntityName": "entrega",
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipName": "turma",
+            "otherEntityName": "turma",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "matricula",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171221122100",
+    "entityTableName": "aluno",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

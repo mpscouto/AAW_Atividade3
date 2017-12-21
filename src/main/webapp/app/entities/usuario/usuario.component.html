@@ -1,0 +1,94 @@
+<div>
+    <h2>
+        <span jhiTranslate="aawAtividade3App.usuario.home.title">Usuarios</span>
+        <button class="btn btn-primary float-right jh-create-entity create-usuario" [routerLink]="['/', { outlets: { popup: ['usuario-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="aawAtividade3App.usuario.home.createLabel">
+            Create new Usuario
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="usuarios">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.codigo">Codigo</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.login">Login</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.senha">Senha</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.nome">Nome</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.email">Email</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.rg">Rg</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.cpf">Cpf</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.telefone">Telefone</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.dataNasc">Data Nasc</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.idade">Idade</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.permissao">Permissao</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.aluno">Aluno</span></th>
+            <th><span jhiTranslate="aawAtividade3App.usuario.professor">Professor</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let usuario of usuarios ;trackBy: trackId">
+                <td><a [routerLink]="['../usuario', usuario.id ]">{{usuario.id}}</a></td>
+                <td>{{usuario.codigo}}</td>
+                <td>{{usuario.login}}</td>
+                <td>{{usuario.senha}}</td>
+                <td>{{usuario.nome}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.rg}}</td>
+                <td>{{usuario.cpf}}</td>
+                <td>{{usuario.telefone}}</td>
+                <td>{{usuario.dataNasc}}</td>
+                <td>{{usuario.idade}}</td>
+                <td>
+                    <div *ngIf="usuario.permissao">
+                        <a [routerLink]="['../permissao', usuario.permissao?.id ]" >{{usuario.permissao?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="usuario.aluno">
+                        <a [routerLink]="['../aluno', usuario.aluno?.id ]" >{{usuario.aluno?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="usuario.professor">
+                        <a [routerLink]="['../professor', usuario.professor?.id ]" >{{usuario.professor?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../usuario', usuario.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'usuario/'+ usuario.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'usuario/'+ usuario.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

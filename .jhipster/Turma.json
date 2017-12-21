@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "professor",
+            "otherEntityName": "professor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "otherEntityRelationshipName": "turma"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "aula",
+            "otherEntityName": "aula",
+            "otherEntityRelationshipName": "turma"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sala",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171221122104",
+    "entityTableName": "turma",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

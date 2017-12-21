@@ -1,0 +1,72 @@
+<div>
+    <h2>
+        <span jhiTranslate="aawAtividade3App.atividade.home.title">Atividades</span>
+        <button class="btn btn-primary float-right jh-create-entity create-atividade" [routerLink]="['/', { outlets: { popup: ['atividade-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="aawAtividade3App.atividade.home.createLabel">
+            Create new Atividade
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="atividades">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="aawAtividade3App.atividade.codigo">Codigo</span></th>
+            <th><span jhiTranslate="aawAtividade3App.atividade.roteiro">Roteiro</span></th>
+            <th><span jhiTranslate="aawAtividade3App.atividade.professor">Professor</span></th>
+            <th><span jhiTranslate="aawAtividade3App.atividade.disciplina">Disciplina</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let atividade of atividades ;trackBy: trackId">
+                <td><a [routerLink]="['../atividade', atividade.id ]">{{atividade.id}}</a></td>
+                <td>{{atividade.codigo}}</td>
+                <td>{{atividade.roteiro}}</td>
+                <td>
+                    <div *ngIf="atividade.professor">
+                        <a [routerLink]="['../professor', atividade.professor?.id ]" >{{atividade.professor?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="atividade.disciplina">
+                        <a [routerLink]="['../disciplina', atividade.disciplina?.id ]" >{{atividade.disciplina?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../atividade', atividade.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'atividade/'+ atividade.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'atividade/'+ atividade.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

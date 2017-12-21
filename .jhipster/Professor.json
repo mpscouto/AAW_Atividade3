@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "turma",
+            "otherEntityName": "turma",
+            "otherEntityRelationshipName": "professor"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "atividade",
+            "otherEntityName": "atividade",
+            "otherEntityRelationshipName": "professor"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "disciplina",
+            "otherEntityName": "disciplina",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "professor"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "grau",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "salario",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20171221122101",
+    "entityTableName": "professor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

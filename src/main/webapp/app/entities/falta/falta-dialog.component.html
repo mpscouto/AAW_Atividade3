@@ -1,0 +1,56 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFaltaLabel" jhiTranslate="aawAtividade3App.falta.home.createOrEditLabel">Create or edit a Falta</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!falta.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="falta.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.falta.codigo" for="field_codigo">Codigo</label>
+            <input type="number" class="form-control" name="codigo" id="field_codigo"
+                [(ngModel)]="falta.codigo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.falta.numFaltas" for="field_numFaltas">Num Faltas</label>
+            <input type="number" class="form-control" name="numFaltas" id="field_numFaltas"
+                [(ngModel)]="falta.numFaltas" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.falta.aluno" for="field_aluno">Aluno</label>
+            <select class="form-control" id="field_aluno" name="aluno" [(ngModel)]="falta.aluno" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="alunoOption.id === falta.aluno?.id ? falta.aluno : alunoOption" *ngFor="let alunoOption of alunos; trackBy: trackAlunoById">{{alunoOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.falta.aula" for="field_aula">Aula</label>
+            <select class="form-control" id="field_aula" name="aula" [(ngModel)]="falta.aula" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="aulaOption.id === falta.aula?.id ? falta.aula : aulaOption" *ngFor="let aulaOption of aulas; trackBy: trackAulaById">{{aulaOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.falta.periodoLetivo" for="field_periodoLetivo">Periodo Letivo</label>
+            <select class="form-control" id="field_periodoLetivo" name="periodoLetivo" [(ngModel)]="falta.periodoLetivo" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="periodoLetivoOption.id === falta.periodoLetivo?.id ? falta.periodoLetivo : periodoLetivoOption" *ngFor="let periodoLetivoOption of periodoletivos; trackBy: trackPeriodoLetivoById">{{periodoLetivoOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

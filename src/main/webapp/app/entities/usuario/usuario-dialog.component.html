@@ -1,0 +1,96 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myUsuarioLabel" jhiTranslate="aawAtividade3App.usuario.home.createOrEditLabel">Create or edit a Usuario</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!usuario.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="usuario.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.codigo" for="field_codigo">Codigo</label>
+            <input type="number" class="form-control" name="codigo" id="field_codigo"
+                [(ngModel)]="usuario.codigo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.login" for="field_login">Login</label>
+            <input type="text" class="form-control" name="login" id="field_login"
+                [(ngModel)]="usuario.login" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.senha" for="field_senha">Senha</label>
+            <input type="text" class="form-control" name="senha" id="field_senha"
+                [(ngModel)]="usuario.senha" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                [(ngModel)]="usuario.nome" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="usuario.email" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.rg" for="field_rg">Rg</label>
+            <input type="text" class="form-control" name="rg" id="field_rg"
+                [(ngModel)]="usuario.rg" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.cpf" for="field_cpf">Cpf</label>
+            <input type="text" class="form-control" name="cpf" id="field_cpf"
+                [(ngModel)]="usuario.cpf" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.telefone" for="field_telefone">Telefone</label>
+            <input type="text" class="form-control" name="telefone" id="field_telefone"
+                [(ngModel)]="usuario.telefone" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.dataNasc" for="field_dataNasc">Data Nasc</label>
+            <input type="text" class="form-control" name="dataNasc" id="field_dataNasc"
+                [(ngModel)]="usuario.dataNasc" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.idade" for="field_idade">Idade</label>
+            <input type="number" class="form-control" name="idade" id="field_idade"
+                [(ngModel)]="usuario.idade" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.permissao" for="field_permissao">Permissao</label>
+            <select class="form-control" id="field_permissao" name="permissao" [(ngModel)]="usuario.permissao" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="permissaoOption.id === usuario.permissao?.id ? usuario.permissao : permissaoOption" *ngFor="let permissaoOption of permissaos; trackBy: trackPermissaoById">{{permissaoOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.aluno" for="field_aluno">Aluno</label>
+            <select class="form-control" id="field_aluno" name="aluno" [(ngModel)]="usuario.aluno">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="alunoOption.id === usuario.aluno?.id ? usuario.aluno : alunoOption" *ngFor="let alunoOption of alunos; trackBy: trackAlunoById">{{alunoOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="aawAtividade3App.usuario.professor" for="field_professor">Professor</label>
+            <select class="form-control" id="field_professor" name="professor" [(ngModel)]="usuario.professor">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="professorOption.id === usuario.professor?.id ? usuario.professor : professorOption" *ngFor="let professorOption of professors; trackBy: trackProfessorById">{{professorOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

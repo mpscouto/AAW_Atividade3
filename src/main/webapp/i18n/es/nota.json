@@ -1,0 +1,24 @@
+{
+    "aawAtividade3App": {
+        "nota" : {
+            "home": {
+                "title": "Notas",
+                "createLabel": "Crear nuevo Nota",
+                "createOrEditLabel": "Crear o editar Nota"
+            },
+            "created": "Un nuevo Nota ha sido creado con el identificador {{ param }}",
+            "updated": "Un Nota ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Nota ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Nota {{ id }}?"
+            },
+            "detail": {
+                "title": "Nota"
+            },
+            "codigo": "Codigo",
+            "valor": "Valor",
+            "aluno": "Aluno",
+            "atividade": "Atividade"
+        }
+    }
+}

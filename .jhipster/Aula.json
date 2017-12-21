@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "turma",
+            "otherEntityName": "turma",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "falta",
+            "otherEntityName": "falta",
+            "otherEntityRelationshipName": "aula"
+        },
+        {
+            "relationshipName": "periodoLetivo",
+            "otherEntityName": "periodoLetivo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "horarioInicio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "horarioTermino",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171221122106",
+    "entityTableName": "aula",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

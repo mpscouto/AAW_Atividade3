@@ -1,0 +1,48 @@
+
+<div *ngIf="falta">
+    <h2><span jhiTranslate="aawAtividade3App.falta.detail.title">Falta</span> {{falta.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="aawAtividade3App.falta.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{falta.codigo}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.falta.numFaltas">Num Faltas</span></dt>
+        <dd>
+            <span>{{falta.numFaltas}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.falta.aluno">Aluno</span></dt>
+        <dd>
+            <div *ngIf="falta.aluno">
+                <a [routerLink]="['/aluno', falta.aluno?.id]">{{falta.aluno?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.falta.aula">Aula</span></dt>
+        <dd>
+            <div *ngIf="falta.aula">
+                <a [routerLink]="['/aula', falta.aula?.id]">{{falta.aula?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.falta.periodoLetivo">Periodo Letivo</span></dt>
+        <dd>
+            <div *ngIf="falta.periodoLetivo">
+                <a [routerLink]="['/periodo-letivo', falta.periodoLetivo?.id]">{{falta.periodoLetivo?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'falta/'+ falta.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

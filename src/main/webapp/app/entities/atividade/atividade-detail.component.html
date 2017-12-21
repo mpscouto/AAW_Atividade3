@@ -1,0 +1,42 @@
+
+<div *ngIf="atividade">
+    <h2><span jhiTranslate="aawAtividade3App.atividade.detail.title">Atividade</span> {{atividade.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="aawAtividade3App.atividade.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{atividade.codigo}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.atividade.roteiro">Roteiro</span></dt>
+        <dd>
+            <span>{{atividade.roteiro}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.atividade.professor">Professor</span></dt>
+        <dd>
+            <div *ngIf="atividade.professor">
+                <a [routerLink]="['/professor', atividade.professor?.id]">{{atividade.professor?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.atividade.disciplina">Disciplina</span></dt>
+        <dd>
+            <div *ngIf="atividade.disciplina">
+                <a [routerLink]="['/disciplina', atividade.disciplina?.id]">{{atividade.disciplina?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'atividade/'+ atividade.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

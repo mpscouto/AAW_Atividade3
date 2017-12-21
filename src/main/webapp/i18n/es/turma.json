@@ -1,0 +1,25 @@
+{
+    "aawAtividade3App": {
+        "turma" : {
+            "home": {
+                "title": "Turmas",
+                "createLabel": "Crear nuevo Turma",
+                "createOrEditLabel": "Crear o editar Turma"
+            },
+            "created": "Un nuevo Turma ha sido creado con el identificador {{ param }}",
+            "updated": "Un Turma ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Turma ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Turma {{ id }}?"
+            },
+            "detail": {
+                "title": "Turma"
+            },
+            "codigo": "Codigo",
+            "sala": "Sala",
+            "professor": "Professor",
+            "aluno": "Aluno",
+            "aula": "Aula"
+        }
+    }
+}

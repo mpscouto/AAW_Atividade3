@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "falta",
+            "otherEntityName": "falta",
+            "otherEntityRelationshipName": "periodoLetivo"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "aula",
+            "otherEntityName": "aula",
+            "otherEntityRelationshipName": "periodoLetivo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mes",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ano",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20171221122108",
+    "entityTableName": "periodo_letivo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

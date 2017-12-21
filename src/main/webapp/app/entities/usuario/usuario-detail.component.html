@@ -1,0 +1,80 @@
+
+<div *ngIf="usuario">
+    <h2><span jhiTranslate="aawAtividade3App.usuario.detail.title">Usuario</span> {{usuario.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="aawAtividade3App.usuario.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{usuario.codigo}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.login">Login</span></dt>
+        <dd>
+            <span>{{usuario.login}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.senha">Senha</span></dt>
+        <dd>
+            <span>{{usuario.senha}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.nome">Nome</span></dt>
+        <dd>
+            <span>{{usuario.nome}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.email">Email</span></dt>
+        <dd>
+            <span>{{usuario.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.rg">Rg</span></dt>
+        <dd>
+            <span>{{usuario.rg}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.cpf">Cpf</span></dt>
+        <dd>
+            <span>{{usuario.cpf}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.telefone">Telefone</span></dt>
+        <dd>
+            <span>{{usuario.telefone}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.dataNasc">Data Nasc</span></dt>
+        <dd>
+            <span>{{usuario.dataNasc}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.idade">Idade</span></dt>
+        <dd>
+            <span>{{usuario.idade}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.permissao">Permissao</span></dt>
+        <dd>
+            <div *ngIf="usuario.permissao">
+                <a [routerLink]="['/permissao', usuario.permissao?.id]">{{usuario.permissao?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.aluno">Aluno</span></dt>
+        <dd>
+            <div *ngIf="usuario.aluno">
+                <a [routerLink]="['/aluno', usuario.aluno?.id]">{{usuario.aluno?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.usuario.professor">Professor</span></dt>
+        <dd>
+            <div *ngIf="usuario.professor">
+                <a [routerLink]="['/professor', usuario.professor?.id]">{{usuario.professor?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'usuario/'+ usuario.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

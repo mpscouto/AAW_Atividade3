@@ -1,0 +1,34 @@
+
+<div *ngIf="periodoLetivo">
+    <h2><span jhiTranslate="aawAtividade3App.periodoLetivo.detail.title">Periodo Letivo</span> {{periodoLetivo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="aawAtividade3App.periodoLetivo.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{periodoLetivo.codigo}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.periodoLetivo.mes">Mes</span></dt>
+        <dd>
+            <span>{{periodoLetivo.mes}}</span>
+        </dd>
+        <dt><span jhiTranslate="aawAtividade3App.periodoLetivo.ano">Ano</span></dt>
+        <dd>
+            <span>{{periodoLetivo.ano}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'periodo-letivo/'+ periodoLetivo.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="aawAtividade3App.entrega.home.title">Entregas</span>
+        <button class="btn btn-primary float-right jh-create-entity create-entrega" [routerLink]="['/', { outlets: { popup: ['entrega-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="aawAtividade3App.entrega.home.createLabel">
+            Create new Entrega
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="entregas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="aawAtividade3App.entrega.codigo">Codigo</span></th>
+            <th><span jhiTranslate="aawAtividade3App.entrega.dataPrevista">Data Prevista</span></th>
+            <th><span jhiTranslate="aawAtividade3App.entrega.dataEntrega">Data Entrega</span></th>
+            <th><span jhiTranslate="aawAtividade3App.entrega.aluno">Aluno</span></th>
+            <th><span jhiTranslate="aawAtividade3App.entrega.atividade">Atividade</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let entrega of entregas ;trackBy: trackId">
+                <td><a [routerLink]="['../entrega', entrega.id ]">{{entrega.id}}</a></td>
+                <td>{{entrega.codigo}}</td>
+                <td>{{entrega.dataPrevista}}</td>
+                <td>{{entrega.dataEntrega}}</td>
+                <td>
+                    <div *ngIf="entrega.aluno">
+                        <a [routerLink]="['../aluno', entrega.aluno?.id ]" >{{entrega.aluno?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="entrega.atividade">
+                        <a [routerLink]="['../atividade', entrega.atividade?.id ]" >{{entrega.atividade?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../entrega', entrega.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'entrega/'+ entrega.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'entrega/'+ entrega.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

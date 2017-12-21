@@ -1,0 +1,26 @@
+{
+    "aawAtividade3App": {
+        "aluno" : {
+            "home": {
+                "title": "Alunos",
+                "createLabel": "Crear nuevo Aluno",
+                "createOrEditLabel": "Crear o editar Aluno"
+            },
+            "created": "Un nuevo Aluno ha sido creado con el identificador {{ param }}",
+            "updated": "Un Aluno ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Aluno ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Aluno {{ id }}?"
+            },
+            "detail": {
+                "title": "Aluno"
+            },
+            "codigo": "Codigo",
+            "matricula": "Matricula",
+            "falta": "Falta",
+            "nota": "Nota",
+            "entrega": "Entrega",
+            "turma": "Turma"
+        }
+    }
+}

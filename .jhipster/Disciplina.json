@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "atividade",
+            "otherEntityName": "atividade",
+            "otherEntityRelationshipName": "disciplina"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "disciplina",
+            "relationshipName": "professor",
+            "otherEntityName": "professor",
+            "otherEntityField": "codigo",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171221122105",
+    "entityTableName": "disciplina",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

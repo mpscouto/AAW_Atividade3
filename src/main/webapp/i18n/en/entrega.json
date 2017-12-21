@@ -1,0 +1,25 @@
+{
+    "aawAtividade3App": {
+        "entrega" : {
+            "home": {
+                "title": "Entregas",
+                "createLabel": "Create a new Entrega",
+                "createOrEditLabel": "Create or edit a Entrega"
+            },
+            "created": "A new Entrega is created with identifier {{ param }}",
+            "updated": "A Entrega is updated with identifier {{ param }}",
+            "deleted": "A Entrega is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entrega {{ id }}?"
+            },
+            "detail": {
+                "title": "Entrega"
+            },
+            "codigo": "Codigo",
+            "dataPrevista": "Data Prevista",
+            "dataEntrega": "Data Entrega",
+            "aluno": "Aluno",
+            "atividade": "Atividade"
+        }
+    }
+}

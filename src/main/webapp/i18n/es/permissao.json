@@ -1,0 +1,23 @@
+{
+    "aawAtividade3App": {
+        "permissao" : {
+            "home": {
+                "title": "Permissaos",
+                "createLabel": "Crear nuevo Permissao",
+                "createOrEditLabel": "Crear o editar Permissao"
+            },
+            "created": "Un nuevo Permissao ha sido creado con el identificador {{ param }}",
+            "updated": "Un Permissao ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Permissao ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Permissao {{ id }}?"
+            },
+            "detail": {
+                "title": "Permissao"
+            },
+            "codigo": "Codigo",
+            "tipo": "Tipo",
+            "usuario": "Usuario"
+        }
+    }
+}

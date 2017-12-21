@@ -1,0 +1,33 @@
+{
+    "aawAtividade3App": {
+        "usuario" : {
+            "home": {
+                "title": "Usuarios",
+                "createLabel": "Create a new Usuario",
+                "createOrEditLabel": "Create or edit a Usuario"
+            },
+            "created": "A new Usuario is created with identifier {{ param }}",
+            "updated": "A Usuario is updated with identifier {{ param }}",
+            "deleted": "A Usuario is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Usuario {{ id }}?"
+            },
+            "detail": {
+                "title": "Usuario"
+            },
+            "codigo": "Codigo",
+            "login": "Login",
+            "senha": "Senha",
+            "nome": "Nome",
+            "email": "Email",
+            "rg": "Rg",
+            "cpf": "Cpf",
+            "telefone": "Telefone",
+            "dataNasc": "Data Nasc",
+            "idade": "Idade",
+            "permissao": "Permissao",
+            "aluno": "Aluno",
+            "professor": "Professor"
+        }
+    }
+}

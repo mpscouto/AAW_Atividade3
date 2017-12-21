@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "professor",
+            "otherEntityName": "professor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "disciplina",
+            "otherEntityName": "disciplina",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "nota",
+            "otherEntityName": "nota",
+            "otherEntityRelationshipName": "atividade"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "entrega",
+            "otherEntityName": "entrega",
+            "otherEntityRelationshipName": "atividade"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "roteiro",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171221122107",
+    "entityTableName": "atividade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

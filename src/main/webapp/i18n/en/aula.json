@@ -1,0 +1,26 @@
+{
+    "aawAtividade3App": {
+        "aula" : {
+            "home": {
+                "title": "Aulas",
+                "createLabel": "Create a new Aula",
+                "createOrEditLabel": "Create or edit a Aula"
+            },
+            "created": "A new Aula is created with identifier {{ param }}",
+            "updated": "A Aula is updated with identifier {{ param }}",
+            "deleted": "A Aula is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Aula {{ id }}?"
+            },
+            "detail": {
+                "title": "Aula"
+            },
+            "codigo": "Codigo",
+            "horarioInicio": "Horario Inicio",
+            "horarioTermino": "Horario Termino",
+            "turma": "Turma",
+            "falta": "Falta",
+            "periodoLetivo": "Periodo Letivo"
+        }
+    }
+}
